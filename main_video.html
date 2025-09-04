@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #2456f7;
+            background-image: url(img-bg.png);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+
+        }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+
+    /* Hiệu ứng pha lê */
+    background: rgba(255, 255, 255, 0.15);  /* nền trong suốt */
+    backdrop-filter: blur(12px);            /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(12px);    /* hỗ trợ Safari */
+
+    /* Box-shadow kiểu nhẹ nhàng */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+
+        .logo {
+    width: 10rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    }
+
+
+        .group-pagodaname {
+            align-items: center;
+            padding-left: 6rem;
+        }
+
+    .group-pagodaname h1 {
+    font-family: 'Khmer OS Muol', sans-serif;
+    font-size: 3rem;
+    padding: 1rem;
+    text-align: center;
+    color: #f7f2f2; /* Màu chữ tối hơn nền trắng */
+
+
+    /* Hiệu ứng 3D bằng bóng chữ */
+    text-shadow:
+        1px 1px 0 #f5a207,
+        2px 2px 0 #c4ec11,
+        3px 3px 0 #e44545,
+        4px 4px 0 #110404,
+        5px 5px 10px rgba(223, 23, 23, 0.3);
+
+    /* Thêm hiệu ứng chuyển động nhẹ khi rê chuột */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    text-shadow:
+        1px 1px 0 #bbb,
+        2px 2px 0 #aaa,
+        3px 3px 0 #999,
+        4px 4px 0 #888,
+        5px 5px 15px rgba(0,0,0,0.4);
+}
+
+
+        .group-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .bi-house{
+            padding: 1rem;
+            font-size: 1.8rem;
+            color:#0ef13f;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+        .bi-house:hover {
+            background-color: #0ff71b;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bi-tiktok{
+            padding: 1rem;
+            font-size: 1.6rem;
+            color:#0f0801;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+            .bi-tiktok:hover {
+            background-color: #01010f;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .bi-youtube{
+            padding: 1rem;
+            font-size: 2.2rem;
+            color:#f70808;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+            .bi-youtube:hover {
+            background-color: #f70f36;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bi-facebook{
+            padding: 1rem;
+            font-size: 1.6rem;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+        .bi-facebook:hover {
+            background-color: #0f12f7;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+      /* HERO NAVIGATION BAR */
+.hero-nav {
+    margin-top: 6rem;
+    height: 4rem;
+    background-image: url("network-connections-technology-background.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* nav-links bên trái, search bên phải */
+    padding: 0 2rem;
+}
+
+/* NAVIGATION LINKS */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fafaf6;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-family: Khmer OS Muol;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    display: block;
+;
+}
+
+.nav-link:hover {
+    background-color: #f5a511;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.15); /* pha lê */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    min-width: 180px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    /* hiệu ứng trượt */
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+
+    /* xếp dọc */
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    padding: 12px 16px;
+    color: #f8f3f3;
+    display: block;
+    width: 100%;
+    transition: background 0.3s;
+    font-family: Khmer OS Bokor;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown li a:hover {
+    background: rgba(12, 12, 12, 0.25);
+    color:#fa7c07;
+}
+
+
+/* khi hover li cha thì hiện dropdown */
+.nav-links ul li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* SEARCH BOX */
+.gsearch {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    background: rgba(255, 255, 255, 0.2);
+    width: 16rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    color: #fff;
+    margin-right: 2rem;
+}
+
+.search:focus {
+    box-shadow: 0 0 0 3px rgba(14, 241, 63, 0.3);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.search::placeholder {
+    color: #eee;
+    font-family: Khmer OS Bokor;
+    font-size: 20px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    body {
+        background-image: none;
+    }
+
+    /* Header responsive */
+    header {
+        height: auto;
+        min-height: 5rem;
+        padding: 0.5rem 1rem;
+        flex-direction: flex;
+        gap: 1rem;
+    }
+    
+    .logo {
+        width: 6rem;
+        padding: 0.25rem;
+    }
+    
+    .group-pagodaname {
+        padding-left: 2rem;
+        text-align: center;
+    }
+    
+    .group-pagodaname h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        text-shadow: 1px 1px 0 #f5a207, 2px 2px 0 #c4ec11, 3px 3px 0 #e44545;
+    }
+    
+    .group-icon {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .bi-house, .bi-tiktok, .bi-youtube, .bi-facebook {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+
+  /* Navigation responsive */
+  .hero-nav {
+    margin-top: 5rem;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    position: relative;
+
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  /* Position dropdown to the right instead of below */
+  .dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    background: rgba(156, 155, 154, 0.9);
+    margin-top: 0;
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */
+    border-radius: 1rem;                  /* bo góc */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+    padding: 1.5rem;
+  }
+
+  /* Show dropdown on hover for mobile */
+  .nav-links ul li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .search {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    background-image: none;
+  }
+
+  /* Header responsive - Mobile */
+  header {
+    height: auto;
+    min-height: 4rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 4rem;
+    padding: 0.25rem;
+    margin: 0 auto;
+  }
+
+  .group-pagodaname {
+    padding: 0;
+    text-align: center;
+  }
+
+  .group-pagodaname h1 {
+    font-size: 1.2rem;
+    padding: 0.25rem;
+    text-shadow: 1px 1px 0 #f5a207, 2px 2px 0 #c4ec11;
+  }
+
+  .group-icon {
+    justify-content: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .bi-house,
+  .bi-tiktok,
+  .bi-youtube,
+  .bi-facebook {
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
+
+  /* Navigation responsive - Mobile */
+  .hero-nav {
+    margin-top: 8.5rem;
+    height: auto;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    position: relative;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  /* Mobile dropdown - stack below instead of side */
+  .dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    background: rgba(156, 155, 154, 0.9);
+    margin-top: 0;
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */
+    border-radius: 1rem;                  /* bo góc */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+    padding: 1.5rem;
+  }
+
+  .nav-links ul li:hover .dropdown {
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+}
+
+@media screen and (min-width: 1500px) {
+
+  
+}
+    </style>
+
+</head>
+<body>
+
+<header>
+        <img class="logo" src="Page logo.png" alt="logo">
+
+        <div class="group-pagodaname">
+            <h1>វត្តសាសនសាមគ្គីរង្សី អូរត្រាវ</h1>
+        </div>
+        
+        <div class="group-icon">
+            <a href="https://www.facebook.com/Wattotrao"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@ChuaOtrao-st5nt/videos"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-tiktok"></i></a>
+            <a href="http://127.0.0.1:3000/index.html"><i class="bi bi-house"></i></a>
+        </div>
+
+</header>
+
+ <div class="hero-nav">
+    <div class="nav-links">
+      <ul>
+        <li>
+          <a class="nav-link" href="http://127.0.0.1:3000/index.html">ទំព័រដើម</a>
+        </li>
+        <li>
+          <a class="nav-link" href="main_history.html">ប្រវត្តិ</a>
+          <ul class="dropdown">
+            <li><a href="main_history.html#title1">ប្រវត្តភូមិអូរត្រាវ</a></li>
+            <li><a href="main_history.html#title2">ប្រវត្តវត្តអូរត្រាវ</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_education.html">សិក្សាធិការ</a>
+          <ul class="dropdown">
+            <li><a href="#">ខេមរៈវិជ្ជា</a></li>
+            <li><a href="#">បឋមភូមិ</a></li>
+            <li><a href="#">ទុតិយភូមិ</a></li>
+            <li><a href="#">សិក្សាព្រះធ៌ម</a></li>
+            <li><a href="#">សក្សាព្រះត្រៃបិដក</a></li>
+            <li><a href="#">ពត៌មានផ្ទាល់ខ្លួន</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_art.html">សីល្បៈ</a>
+          <ul class="dropdown">
+            <li><a href="#">របាំ</a></li>
+            <li><a href="#">ឆៃយាំ</a></li>
+            <li><a href="#">ភ្លេងបុរាណ</a></li>
+            <li><a href="#">ភ្លេងពិណពាត្យ</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_event.html">សង្គមកិច្ច</a>
+          <ul class="dropdown">
+            <li><a href="#">កម្មវិធីក្នុងវត្ត</a></li>
+            <li><a href="#">កម្មវិធីនានា</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_library.html">បណ្ណល័យ</a>
+          <ul class="dropdown">
+            <li><a href="#">ព្រះត្រៃបិដក</a></li>
+            <li><a href="#">បឋមភូមិ</a></li>
+            <li><a href="#">ទុតិយភូមិ</a></li>
+            <li><a href="#">ព្រះធ៌មអប់រំ</a></li>
+            <li><a href="#">ឯកសារពុទ្ធិកៈ</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_photo.html">រូបភាព</a>
+          <ul class="dropdown">
+            <li><a href="#">យាយតាឧបោសថ</a></li>
+            <li><a href="#">រូភាពទូទៅ</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link" href="main_video.html">វីដេអូរ</a>
+          <ul class="dropdown">
+            <li><a href="#">អប់រំ</a></li>
+            <li><a href="#">វប្បធ៌ម</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+ 
+
+
+
+
+        <div class="gsearch">
+            <input type="text" class="search" placeholder="ស្វែងរក...">
+        </div>
+</div>
