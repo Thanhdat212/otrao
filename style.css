@@ -1,0 +1,1959 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fcfcfd;
+            background-image: url(img-bg.png);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+
+        }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+
+    /* Hiệu ứng pha lê */
+    background: rgba(255, 255, 255, 0.15);  /* nền trong suốt */
+    backdrop-filter: blur(12px);            /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(12px);    /* hỗ trợ Safari */
+
+    /* Box-shadow kiểu nhẹ nhàng */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+
+        .logo {
+    width: 10rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    }
+
+
+        .group-pagodaname {
+            align-items: center;
+            padding-left: 6rem;
+        }
+
+    .group-pagodaname h1 {
+    font-family: 'Khmer OS Muol', sans-serif;
+    font-size: 3rem;
+    padding: 1rem;
+    text-align: center;
+    color: #f7f2f2; /* Màu chữ tối hơn nền trắng */
+
+
+    /* Hiệu ứng 3D bằng bóng chữ */
+    text-shadow:
+        1px 1px 0 #f5a207,
+        2px 2px 0 #c4ec11,
+        3px 3px 0 #e44545,
+        4px 4px 0 #110404,
+        5px 5px 10px rgba(223, 23, 23, 0.3);
+
+    /* Thêm hiệu ứng chuyển động nhẹ khi rê chuột */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    text-shadow:
+        1px 1px 0 #bbb,
+        2px 2px 0 #aaa,
+        3px 3px 0 #999,
+        4px 4px 0 #888,
+        5px 5px 15px rgba(0,0,0,0.4);
+}
+
+
+        .group-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .bi-house{
+            padding: 1rem;
+            font-size: 1.8rem;
+            color:#0ef13f;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+        .bi-house:hover {
+            background-color: #0ff71b;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bi-tiktok{
+            padding: 1rem;
+            font-size: 1.6rem;
+            color:#0f0801;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+            .bi-tiktok:hover {
+            background-color: #01010f;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .bi-youtube{
+            padding: 1rem;
+            font-size: 2.2rem;
+            color:#f70808;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+            .bi-youtube:hover {
+            background-color: #f70f36;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bi-facebook{
+            padding: 1rem;
+            font-size: 1.6rem;
+            transition: all 0.5s ease; /* hiệu ứng mượt cho tất cả thuộc tính thay đổi */
+            border-radius: 50%;
+        }
+
+        .bi-facebook:hover {
+            background-color: #0f12f7;
+            color: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+
+      /* HERO NAVIGATION BAR */
+.hero-nav {
+    margin-top: 6rem;
+    height: 4rem;
+    background-image: url("network-connections-technology-background.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* nav-links bên trái, search bên phải */
+    padding: 0 2rem;
+}
+
+/* NAVIGATION LINKS */
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links ul li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fafaf6;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-family: Khmer OS Muol;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    display: block;
+;
+}
+
+.nav-link:hover {
+    background-color: #f5a511;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.15); /* pha lê */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    min-width: 180px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    /* hiệu ứng trượt */
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+
+    /* xếp dọc */
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown li a {
+    padding: 12px 16px;
+    color: #f8f3f3;
+    display: block;
+    width: 100%;
+    transition: background 0.3s;
+    font-family: Khmer OS Bokor;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown li a:hover {
+    background: rgba(12, 12, 12, 0.25);
+    color:#fa7c07;
+}
+
+
+/* khi hover li cha thì hiện dropdown */
+.nav-links ul li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* SEARCH BOX */
+.gsearch {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    background: rgba(255, 255, 255, 0.2);
+    width: 16rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    color: #fff;
+    margin-right: 2rem;
+}
+
+.search:focus {
+    box-shadow: 0 0 0 3px rgba(14, 241, 63, 0.3);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.search::placeholder {
+    color: #faf7f7;
+    font-family: Khmer OS Bokor;
+    font-size: 20px;
+}
+
+
+
+.containers{
+    background-image: url(bg-cons.png);
+    background-size: 100% !important;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin-block: 0;
+    padding-bottom: 0;
+
+}
+
+
+
+.container1 {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+.con-mid h2{
+    font-family: Koulen;
+    color:#fafaf7;
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    text-shadow:
+        1px 1px 0 #f70606,
+        2px 2px 0 #e8ec11,
+        3px 3px 0 #0a4fe4,
+        4px 4px 0 #999,
+        5px 5px 10px rgba(223, 23, 23, 0.3);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.con-mid h3{
+    font-family: Khmer OS Muol Pali;
+    color:#f1f5f5;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.con-mid h4{
+    font-family: Khmer OS Freehand;
+    color:#bbdee7;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.vin-pic {
+    width: 10rem;
+    height: auto;
+}
+
+.con-mid p{
+    font-family: Khmer OS Bokor;
+    color:#f4f7f6;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.con-snake{
+    padding-top: 20rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.con-mid{
+    padding-top: 8rem;
+}
+
+.con-pic {
+    width: 15rem;
+    height: auto;
+    display: none;
+}
+
+.hidden_pic {
+    display: none;
+}
+
+
+
+.container2{
+    width: 100%;
+    display: flex;
+    padding-top: 4rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+
+
+
+.container2.show,
+.container3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.temple_pic {
+    width: 50%;
+}
+
+.temple2 {
+    width: 80%;
+    padding-left: 8rem;
+
+}
+
+.story2 {
+    width: 50%;
+}
+
+.container2 h1 {
+    color: #d3e2d8;
+    font-size: 3rem;
+    font-family: Koulen;
+    padding-bottom: 4rem;
+    margin: 0;
+    text-align: right;
+    padding-right: 6rem;
+}
+
+
+
+.container2 p{ 
+    color:#eef3f1;
+    font-family: Khmer OS Bokor;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 6rem;
+
+    text-align: justify;
+}
+
+.container3 {
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    padding-top: 4rem;
+
+}
+
+.story3 {
+    width: 50%;
+    height: 30rem;
+    padding-left: 5rem;
+
+}
+
+.story3 h1{
+    color:#eef3f0;
+    padding-left: 2rem;
+    font-size: 3rem;
+    font-family: Koulen;
+    text-align: left;
+    white-space: nowrap;
+    padding-block: 2rem;
+}
+
+.story3 p{
+    color:#f9fcfa;
+    font-family: Khmer OS Bokor;
+    font-size: 1.2rem;
+    text-align: justify;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    width: 90%;
+}
+
+.family_pic {
+    width: 50%;
+}
+
+.family3 {
+    width: 87%;
+    padding-top: 2rem;
+}
+
+.tui{
+    padding-top: 4rem;
+}
+.tui-pic {
+    width: 20rem;
+    height: 4rem;
+    display: block;
+    margin: 0 auto;
+} 
+
+.con-pic-item1{
+    display: none;
+}
+
+.foot-containers {
+    justify-content: center;
+    text-align: center;
+}
+
+.foot-containers h1 {
+    font-family: Khmer OS Muol Pali;
+    color:#d3e2d8;
+    padding-bottom: 1rem;
+}
+
+.foot-containers p {
+    color:#d3e2d8;
+    font-family: Khmer OS Bokor;
+    font-size: 2rem;
+    padding-bottom: 2.8rem !important;
+}
+
+
+
+.intro-videos {
+    text-align: center;
+    margin-top: 0rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    display: flex;
+    background-image: url(sankran-min.png);
+    background-repeat: no-repeat;
+    background-size: 100% !important;
+    background-position: center 20rem;
+    background-color: #d3e2d8;
+
+}
+
+.video-container h2{
+    font-family: Khmer OS Bokor;
+    color:#070707;
+    padding-top: 4rem;
+    font-family: Khmer OS Muol Pali;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-image: url(bg-photos-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top 2rem;
+    background-size: 35%;
+    background-color: #d3e2d8;
+    padding-bottom: 4rem;
+}
+
+.intro-videos p{
+    font-family: Khmer OS Bokor;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    text-align: justify;
+    color:#0b0b0b;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    background: rgba(37, 29, 29, 0.15); /* màu trắng trong suốt nhẹ */            
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(240, 7, 7, 0.1); /* bóng mờ nhẹ */
+}
+
+
+.tevada-left,
+.tevada-right {
+    width: 15rem;       /* Chiều rộng ảnh */
+    height: auto;      /* Giữ tỉ lệ ảnh */
+    object-fit: contain;
+    padding-top: 8rem;
+}
+
+.tevada-left {
+    margin-right: 2rem;
+    padding-left: 2rem;
+}
+
+.tevada-right {
+    margin-left: 2rem;
+    padding-right: 2rem;
+}
+
+.photos-title {
+    padding-top: 2.8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-family: Khmer OS Muol Pali;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-image: url(bg-photos-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 25%;
+    background-color: #d3e2d8;
+}
+
+.photos-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #d3e2d8;
+
+
+}
+
+.slider-container {
+    overflow: hidden;
+    padding: 1rem;
+    background: #f07807;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+}
+
+.photo-item-1 {
+    width: 10rem;
+    height: 16rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    border: 0.2rem solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item-1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.photo-item-2 {
+    width: 18rem;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 20px;
+    border: 4px solid #faf4f4;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item-2:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+    transition: transform 0.3s ease;
+}
+
+.edu-title{
+    padding-top: 13rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    color:#0a0a0a;
+    font-family: Khmer OS Muol Pali;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    background-image: url(bg-photos-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top 10rem;
+    background-size: 30%;
+}
+
+
+.edu-content { 
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-bottom: 10rem;
+}
+
+
+.container4 {
+    color:#f1f5f5;
+    font-family: Khmer OS Fasthand;
+    font-size: 1.3rem;
+    text-align: justify;
+    background: rgba(153, 153, 153, 0.2); /* nền xám nhạt trong suốt */
+    backdrop-filter: blur(10px);          /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px);  /* hỗ trợ Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* viền sáng như kính */
+    border-radius: 2rem; /* bo góc mềm mại */
+    padding: 4rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    
+}
+
+.container4.show {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.edu-video {
+    text-align: center;
+    padding-bottom: 8rem;
+
+}
+
+footer {
+    background-color: #888;
+    width: 100%;
+    height: 18rem;
+}
+
+
+.khatha {
+    text-align: center;
+    background: rgba(153, 153, 153, 0.2); /* nền xám nhạt trong suốt */
+    backdrop-filter: blur(10px);          /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px);  /* hỗ trợ Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* viền sáng như kính */
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+}
+.pali {
+    color:#f1f5f5;
+    font-family: Khmer OS Muol Pali;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.khmer {
+    color:#f4f7f6;
+    font-family: Khmer OS Bokor;
+    font-size: 2rem;
+}
+
+.copy-right {
+    color:#f4f7f6;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* ===== RESPONSIVE CSS ===== */
+
+/* Tablet và màn hình nhỏ hơn (768px trở xuống) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    body {
+        background-image: none;
+    }
+
+    /* Header responsive */
+    header {
+        height: auto;
+        min-height: 5rem;
+        padding: 0.5rem 1rem;
+        flex-direction: flex;
+        gap: 1rem;
+    }
+    
+    .logo {
+        width: 6rem;
+        padding: 0.25rem;
+    }
+    
+    .group-pagodaname {
+        padding-left: 2rem;
+        text-align: center;
+    }
+    
+    .group-pagodaname h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        text-shadow: 1px 1px 0 #f5a207, 2px 2px 0 #c4ec11, 3px 3px 0 #e44545;
+    }
+    
+    .group-icon {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .bi-house, .bi-tiktok, .bi-youtube, .bi-facebook {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+
+  /* Navigation responsive */
+  .hero-nav {
+    margin-top: 5rem;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    position: relative;
+
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  /* Position dropdown to the right instead of below */
+  .dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    background: rgba(156, 155, 154, 0.9);
+    margin-top: 0;
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */
+    border-radius: 1rem;                  /* bo góc */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+    padding: 1.5rem;
+  }
+
+  /* Show dropdown on hover for mobile */
+  .nav-links ul li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .search {
+    width: 100%;
+    margin-right: 0;
+  }
+
+
+
+    
+    /* Container responsive */
+    .container1 {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .con-snake {
+        padding: 1rem;
+    }
+    
+    .con-snake img {
+        width: 100%;
+        max-width: 8rem;
+        display: none;
+    }
+    
+    .con-mid {
+        padding-top: 5rem;
+        padding: 1rem;
+    }
+
+    .slo {
+        padding-bottom: 4rem;
+    }
+    
+    .con-mid h2 {
+        font-size: 2.2rem;
+        padding-top: 1rem;
+    }
+    
+    .con-mid h3 {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+    
+    .con-mid h4 {
+        font-size: 1.2rem;
+        padding-top: 0.5rem;
+    }
+    
+    .con-mid p {
+        font-size: 1.3rem;
+        padding-top: 0.5rem;
+        padding-left: 4rem;
+        padding-right: 3rem;
+    }
+    
+    .vin-pic {
+        width: 6rem;
+    }
+
+    .hidden_pic{
+        display: block;
+        text-align: center;
+    }
+
+    .hidden_pic_item {
+        width: 50%;
+    }
+    
+    /* Story containers responsive */
+    .container2, .container3 {
+        flex-direction: column; 
+    }
+
+    
+    .temple2 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0rem;
+        display: none;
+    }
+
+    .family_pic {
+        width: 100%;
+        text-align: center;
+    }
+    .family3 {
+        width: 90%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .story3 {
+        width: 100%;
+        height: 55rem;
+        text-align: center;
+    }
+
+    .story3 h1 {
+        font-size: 3rem;
+        text-align: center;
+        color: #09aa82;
+        padding-top: 10rem;
+        padding-right: 8rem;
+    }
+
+    .story3 p {
+        font-size: 1.7rem;
+        color: #0f0801;
+    }
+
+    .story2 {
+        width: 100% !important;
+        height: 40rem;
+        text-align: center;
+    }
+
+
+    .story2 h1{
+        font-size: 3rem;
+        text-align: center;
+        color: #09aa82;
+        padding-top: 5rem;
+        padding-left: 6rem;
+    }
+
+    .story2 p {
+        font-size: 1.7rem;
+        color: #0f0801;
+        width: 100%;
+        text-align: justify;
+        padding-left: 5rem;
+    }
+
+    .hidden_pic1 {
+        display: block;
+        text-align: center;
+    }
+
+    .hidden_pic1_item {
+        width: 90%;
+    }
+    
+    
+    .foot-containers h1 {
+        color:#09aa82;
+        font-size: 1.6rem !important;
+    }
+
+    .foot-containers p {
+        color: #0d0e0d;
+        font-size: 1.8rem !important;
+    }
+
+    
+    /* Video section responsive */
+    .intro-videos {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        background-size: 100%;
+        background-position: center 25rem;
+    
+    }
+    
+    .tevada-left, .tevada-right {
+        width: 8rem;
+        padding-top: 1rem;
+        margin: 0;
+        display: none;
+    }
+    
+    .video-container h2 {
+        font-size: 1.5rem;
+        padding-top: 3.5rem;
+        padding-bottom: 2rem;
+        background-size: 35%;
+    }
+
+
+    
+    .video-container video {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .intro-videos p {
+        font-size: 1.5rem;
+        background-size: 100%;
+    }
+    
+    /* Photos grid responsive */
+    .photos-title {
+        font-size: 1.5rem;
+        padding: 2rem 1rem;
+        background-size: 35%;
+        padding-top: 5rem;
+        background-position: center 3rem;
+    }
+    
+    .photo-item-1 {
+        width: 8rem;
+        height: 12rem;
+    }
+    
+    .photo-item-2 {
+        width: 14rem;
+    }
+    
+    /* Education section responsive */
+    .edu-title {
+        font-size: 1.3rem;
+        padding: 8rem 1rem 2rem 1rem;
+        background-size: 37%;
+        padding-top: 12rem;
+
+    }
+    
+    .edu-content {
+        padding: 0 1rem 5rem 1rem;
+
+    }
+    
+    .container4 {
+        font-size: 1rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        color: #09aa82;
+        background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */
+        border-radius: 1rem;                  /* bo góc */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+        backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+        -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+        padding: 1.5rem;
+    }
+    
+    .edu-video video {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0rem;
+    }
+    
+    /* Khatha section responsive */
+    .khatha {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+    
+    .pali {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        color: #09aa82;
+    }
+    
+    .khmer {
+        font-size: 1.2rem;
+        color: #09aa82;
+    }
+    
+    /* Footer responsive */
+    footer {
+        height: 20rem;
+        padding: 2rem 1rem;
+    }
+    
+    .copy-right {
+        font-size: 16px;
+    }
+    
+    .tui-pic {
+        width: 15rem;
+        height: auto;
+    }
+    
+    .foot-containers h1 {
+        font-size: 1.2rem;
+        padding-top: 2rem;
+    }
+    
+    .foot-containers p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile nhỏ (480px trở xuống) */
+@media screen and (max-width: 480px) {
+  body {
+    background-image: none;
+  }
+
+  /* Header responsive - Mobile */
+  header {
+    height: auto;
+    min-height: 4rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 4rem;
+    padding: 0.25rem;
+    margin: 0 auto;
+  }
+
+  .group-pagodaname {
+    padding: 0;
+    text-align: center;
+  }
+
+  .group-pagodaname h1 {
+    font-size: 1.2rem;
+    padding: 0.25rem;
+    text-shadow: 1px 1px 0 #f5a207, 2px 2px 0 #c4ec11;
+  }
+
+  .group-icon {
+    justify-content: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .bi-house,
+  .bi-tiktok,
+  .bi-youtube,
+  .bi-facebook {
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
+
+  /* Navigation responsive - Mobile */
+  .hero-nav {
+    margin-top: 8.5rem;
+    height: auto;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    position: relative;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  /* Mobile dropdown - stack below instead of side */
+  .dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    background: rgba(156, 155, 154, 0.9);
+    margin-top: 0;
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */
+    border-radius: 1rem;                  /* bo góc */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+    padding: 1.5rem;
+  }
+
+  .nav-links ul li:hover .dropdown {
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Container responsive - Mobile */
+  .container1 {
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+  }
+
+
+
+  .con-snake {
+    padding: 0.5rem;
+    display: none;
+  }
+
+  .con-mid {
+    padding: 0.5rem;
+  }
+
+  .slo {
+    padding-bottom: 1rem;
+    width: 20rem;
+    padding-top: 1rem
+  }
+
+  .con-mid h2 {
+    font-size: 1rem;
+    padding-top: 0.25rem;
+  }
+
+  .con-mid h3 {
+    font-size: 1rem;
+    padding-top: 0.25rem;
+  }
+
+  .con-mid h4 {
+    font-size: 0.9rem;
+    padding-top: 0.25rem;
+  }
+
+  .con-mid p {
+    font-size: 1rem;
+    padding-bottom: 0rem;
+  }
+
+
+  .vin-pic {
+    width: 4rem;
+  }
+
+  /* Story containers responsive - Mobile */
+ .hidden_pic{
+        display: block;
+        text-align: center;
+
+    }
+
+    .hidden_pic_item {
+        width: 30%;
+    }
+    
+    /* Story containers responsive */
+    .container2, .container3 {
+        flex-direction: column;
+        display: column;
+    }
+
+    .container3 {
+        width: 100%;
+    }
+
+    
+    .temple2 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0rem;
+        display: none;
+    }
+
+    .family_pic {
+        width: 100%;
+        text-align: center;
+    }
+    .family3 {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .story3 {
+        height: 45rem;
+        margin: 0;            /* bỏ khoảng trắng mặc định */
+        padding: 1rem;        /* thêm padding nếu muốn cách chữ */
+        width: 100%;          /* full chiều ngang */
+        box-sizing: border-box;
+
+    }
+
+    .story3 h1 {
+        font-size: 2rem;
+        padding-left: 0rem;
+        color: #06eea1;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .story3 p {
+        font-size: 1.2rem;
+        color: #0f0801;
+        width: 100%;
+    }
+
+    .story2 {
+        height: 35rem;
+        margin: 0;            /* bỏ khoảng trắng mặc định */
+        padding: 1rem;        /* thêm padding nếu muốn cách chữ */
+        width: 100%;          /* full chiều ngang */
+        box-sizing: border-box;
+
+    }
+
+
+    .story2 h1{
+    font-size: 2rem;
+    color: #09aa82;
+    width: 100%;           /* full chiều ngang */
+    margin: 0;             /* bỏ margin mặc định */
+    padding: 1rem 0;       /* padding đều trên dưới */
+    text-align: center;    /* căn chữ giữa */
+    box-sizing: border-box;
+    }
+
+    .story2 p {
+    font-size: 1.2rem;
+    color: #0f0801;
+    width: 100%;
+    text-align: justify;
+    margin: 0;
+    padding: 1rem;   /* đều 4 cạnh thay vì chỉ bên trái */
+    box-sizing: border-box;
+    }
+
+    .hidden_pic1 {
+        display: block;
+        text-align: center;
+    }
+
+    .hidden_pic1_item {
+        width: 90%;
+    }
+    
+
+  .foot-containers{
+    height: 20rem;
+    background: rgba(255, 255, 255, 0.15); /* màu trắng trong suốt nhẹ */            
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bóng mờ nhẹ */
+  }
+
+  .footconh1 {
+    font-size: 1.3rem !important;
+    padding-top: 7rem !important;
+    justify-items: center !important;
+  }
+ 
+  .foot-containers p{
+    font-size: 1.3rem !important;
+  }
+
+  /* Video section responsive - Mobile */
+  .intro-videos {
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    background-size: 100%;
+  }
+
+
+  .tevada-left,
+  .tevada-right {
+    display: none;
+  }
+
+  .video-container h2 {
+    font-size: 1.5rem;
+    padding: 2rem 0 1rem 0;
+    background-size: 60%;
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .video-container video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .intro-videos p {
+    color:#fafdfc;
+    font-size: 1.5rem;
+    padding: 0.5rem 0 1rem 0;
+    background: rgba(37, 29, 29, 0.15); /* màu trắng trong suốt nhẹ */            
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(240, 7, 7, 0.1); /* bóng mờ nhẹ */
+  }
+
+  /* Photos grid responsive - Mobile */
+  .photos-title {
+    font-size: 1.5rem;
+    padding: 3rem 0.5rem 1rem 0.5rem;
+    background-size: 65%;
+    background-position: center 1rem;
+  }
+
+.photo-item-1 {
+    width: 10rem;
+    height: 16rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    border: 0.2rem solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item-1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.photo-item-2 {
+    width: 18rem;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 20px;
+    border: 4px solid #faf4f4;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item-2:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+  /* Education section responsive - Mobile */
+  .edu-title {
+    font-size: 1.5rem;
+    padding: 6rem 0.5rem 1rem 0.5rem;
+    background-size: 75%;
+    background-position: center top 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .edu-content {
+    padding: 0 0.5rem 3rem 0.5rem;
+  }
+
+  .container4 {
+    font-size: 0.9rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #09aa82;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .edu-video video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Khatha section responsive - Mobile */
+  .khatha {
+    padding: 3rem 0.5rem 1rem 0.5rem;
+  }
+
+  .pali {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    color: #09aa82;
+  }
+
+  .khmer {
+    font-size: 0.9rem;
+    color: #09aa82;
+  }
+
+  /* Footer responsive - Mobile */
+  footer {
+    height: auto;
+    min-height: 15rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .copy-right {
+    font-size: 14px;
+  }
+
+  .tui-pic {
+    width: 10rem;
+    height: auto;
+  }
+
+  .foot-containers h1 {
+    font-size: 1rem;
+    padding-top: 1rem;
+    color: #09aa82;
+  }
+
+  .foot-containers p {
+    font-size: 1rem;
+    color: #09aa82;
+  }
+}
+
+
+/* Màn hình lớn (1200px trở lên) */
+@media screen and (min-width: 1500px) {
+
+
+
+
+.containers{
+    background-image: url(bg-cons.png);
+    background-size: 100% !important;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin-block: 0;
+    padding-bottom: 0;
+
+}
+
+
+
+.container1 {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+.con-mid h2{
+    font-family: Koulen;
+    color:#fafaf7;
+    font-size: 3rem;
+    padding-top: 1rem;
+    text-shadow:
+        1px 1px 0 #f70606,
+        2px 2px 0 #e8ec11,
+        3px 3px 0 #0a4fe4,
+        4px 4px 0 #999,
+        5px 5px 10px rgba(223, 23, 23, 0.3);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.con-mid h3{
+    font-family: Khmer OS Muol Pali;
+    color:#f1f5f5;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.con-mid h4{
+    font-family: Khmer OS Freehand;
+    color:#bbdee7;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.vin-pic {
+    width: 10rem;
+    height: auto;
+}
+
+.con-mid p{
+    font-family: Khmer OS Bokor;
+    color:#f4f7f6;
+    font-size: 1.3rem;
+    padding-top: 1rem
+}
+
+.con-snake{
+    padding-top: 20rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.con-mid{
+    padding-top: 8rem;
+    width: 100% !important;
+}
+
+.con-pic {
+    width: 15rem;
+    height: auto;
+    display: none;
+}
+
+
+.container2{
+    width: 100%;
+    display: flex;
+    padding-top: 4rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+
+
+
+.container2.show,
+.container3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.temple_pic {
+    width: 50%;
+}
+
+.temple2 {
+    width: 90%;
+    padding-left: 8rem;
+
+}
+
+.story2 {
+    width: 50%;
+}
+
+.container2 h1 {
+    color: #d3e2d8;
+    font-size: 4rem;
+    font-family: Koulen;
+    padding-bottom: 10rem;
+    margin: 0;
+    text-align: right;
+    padding-right: 7rem;
+}
+
+
+
+.container2 p{ 
+    color:#eef3f1;
+    font-family: Khmer OS Bokor;
+    font-size: 1.5rem;
+    padding-right: 7rem;
+    text-align: justify;
+}
+
+.container3 {
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    padding-top: 8rem;
+
+}
+
+.story3 {
+    width: 50%;
+    height: 30rem;
+    padding-left: 5rem;
+
+}
+
+.story3 h1{
+    color:#eef3f0;
+    padding-left: 4rem;
+    font-size: 4rem;
+    font-family: Koulen;
+    text-align: left;
+    white-space: nowrap;
+    padding-block: 2rem;
+}
+
+.story3 p{
+    color:#f9fcfa;
+    font-family: Khmer OS Bokor;
+    font-size: 1.5rem;
+    text-align: justify;
+    padding-left: 4rem;
+    padding-right: 1rem;
+    width: 90%;
+}
+
+.family_pic {
+    width: 50%;
+}
+
+.family3 {
+    width: 87%;
+    padding-top: 2rem;
+}
+
+.tui-pic {
+    width: 20rem;
+    height: 4rem;
+    display: block;
+    margin: 0 auto;
+} 
+
+.con-pic-item1{
+    display: none;
+}
+
+.foot-containers {
+    justify-content: center;
+    text-align: center;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.foot-containers h1 {
+    font-family: Khmer OS Muol Pali;
+    color:#d3e2d8;
+    padding-top: 4rem;
+}
+
+.foot-containers p {
+    color:#d3e2d8;
+    font-family: Khmer OS Bokor;
+    font-size: 2rem;
+}
+
+
+
+.intro-videos {
+    text-align: center;
+    margin-top: 0rem;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    display: flex;
+    background-image: url(sa);
+    background-repeat: no-repeat;
+    background-size: 100% !important;
+    background-position: center 20rem;
+    background-color: #d3e2d8;
+}
+
+.video-container h2{
+    font-family: Khmer OS Bokor;
+    font-size: 3rem;
+    color:#070707;
+    padding-top: 4.8rem;
+    font-family: Khmer OS Muol Pali;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-image: url(bg-photos-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top 2rem;
+    background-size: 35%;
+    background-color: #d3e2d8;
+    padding-bottom: 10rem;
+}
+
+.video-container p{
+    font-family: Khmer OS Bokor;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2rem;
+    text-align: justify;
+    color:#091610;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background: rgba(37, 29, 29, 0.15); /* màu trắng trong suốt nhẹ */            
+    border: 1px solid rgba(255, 255, 255, 0.3); /* viền mờ */
+    backdrop-filter: blur(10px);          /* hiệu ứng kính mờ */
+    -webkit-backdrop-filter: blur(10px);  /* cho Safari */
+    box-shadow: 0 4px 30px rgba(240, 7, 7, 0.1); /* bóng mờ nhẹ */
+}
+
+
+.tevada-left,
+.tevada-right {
+    width: 15rem;       /* Chiều rộng ảnh */
+    height: auto;      /* Giữ tỉ lệ ảnh */
+    object-fit: contain;
+    padding-top: 8rem;
+}
+
+.tevada-left {
+    margin-right: 2rem;
+    padding-left: 2rem;
+}
+
+.tevada-right {
+    margin-left: 2rem;
+    padding-right: 2rem;
+}
+
+.photos-title {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-family: Khmer OS Muol Pali;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    background-image: url(bg-photos-title.png);
+    background-repeat: no-repeat;
+    background-position: center top 6.8rem;
+    background-size: 25%;
+    background-color: #d3e2d8;
+}
+
+
+
+.edu-title{
+    padding-top: 14rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    color:#0a0a0a;
+    font-family: Khmer OS Muol Pali;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    background-image: url(bg-photos-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top 10rem;
+    background-size: 30%;
+}
+
+
+
+.container4 {
+    color:#f1f5f5;
+    font-family: Khmer OS Fasthand;
+    font-size: 1.3rem;
+    text-align: justify;
+    background: rgba(153, 153, 153, 0.2); /* nền xám nhạt trong suốt */
+    backdrop-filter: blur(10px);          /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px);  /* hỗ trợ Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* viền sáng như kính */
+    border-radius: 2rem; /* bo góc mềm mại */
+    padding: 4rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+    
+}
+
+.container4.show {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.edu-video {
+    text-align: center;
+    padding-bottom: 12rem;
+
+}
+
+footer {
+    background-color: #888;
+    width: 100%;
+    height: 18rem;
+}
+
+
+.khatha {
+    text-align: center;
+    background: rgba(153, 153, 153, 0.2); /* nền xám nhạt trong suốt */
+    backdrop-filter: blur(10px);          /* làm mờ nền phía sau */
+    -webkit-backdrop-filter: blur(10px);  /* hỗ trợ Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* viền sáng như kính */
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+    height: 34rem;
+}
+.pali {
+    color:#f1f5f5;
+    font-family: Khmer OS Muol Pali;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.khmer {
+    color:#f4f7f6;
+    font-family: Khmer OS Bokor;
+    font-size: 2rem;
+}
+
+.copy-right {
+    color:#f4f7f6;
+    text-align: center;
+    font-size: 20px;
+}
+
+}
+
+
+/* Orientation landscape cho mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    header {
+        height: 4rem;
+        flex-direction: row;
+    }
+    
+    .group-pagodaname h1 {
+        font-size: 1rem;
+    }
+    
+    .hero-nav {
+        margin-top: 4rem;
+        flex-direction: row;
+    }
+    
+    .nav-links ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+ 
